@@ -4,7 +4,6 @@ This plugin provides extensions and hooks into the openDesk application suite, s
 
 - Navigation UI changes to match style
 - Integration into central navigation portal
-- Custom seeder to provide another base theme
 - Extensions to the ENV configuration to provide settings
 
 ## Copyright and License

@@ -8,15 +8,11 @@ module OpenProject::OpenDesk
     include OpenProject::Plugins::ActsAsOpEngine
 
     patch_with_namespace :Redmine, :MenuManager, :TopMenuHelper
-    patch_with_namespace :OpenProject, :CustomStyles, :ColorThemes
     patch_with_namespace :OpenProject, :Plugins, :AuthPlugin
     patch_with_namespace :Authorization, :EnterpriseService
 
     patches [:CustomStylesHelper]
 
-    assets %w(
-      open_desk/logo.svg
-    )
 
     register(
       "openproject-open_desk",
@@ -51,9 +47,6 @@ module OpenProject::OpenDesk
     end
 
     config.to_prepare do
-      # Preload the open_desk theme seeder so it becomes discoverable,
-      # as the core seeder relies on .subclasses
-      ::DemoData::OpenDesk::ThemeSeeder
       ::DemoData::OpenDesk::TokenSeeder
     end
   end
