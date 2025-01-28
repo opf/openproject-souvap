@@ -40,14 +40,6 @@ module OpenProject::OpenDesk
       ::Settings::Definition.add "souvap_navigation_secret",
                                  default: nil,
                                  format: :string
-
-      ::Settings::Definition.add "enterprise_token",
-                                 default: nil,
-                                 format: :string
-    end
-
-    config.to_prepare do
-      ::DemoData::OpenDesk::TokenSeeder
     end
   end
 end
