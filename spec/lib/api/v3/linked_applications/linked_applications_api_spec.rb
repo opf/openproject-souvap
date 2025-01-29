@@ -43,6 +43,8 @@ RSpec.describe API::V3::LinkedApplications::LinkedApplicationsAPI, content_type:
 
   context "when not configured" do
     it "returns a bad request error" do
+      allow(API::V3::LinkedApplications::Adapters::Development).to receive(:applicable?).and_return(false)
+
       get get_path
       expect(last_response).to have_http_status 400
     end
